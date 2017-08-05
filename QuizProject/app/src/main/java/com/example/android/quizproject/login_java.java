@@ -56,6 +56,22 @@ public class login_java {
                 String userid = (user_id_edittext.getText().toString()).trim();
                 String password = (password_id_edittext.getText().toString()).trim();
                 String input_code = (otp_edittext.getText().toString()).trim();
+                if (userid.equals("abcd") && password.equals("1234") && input_code.equals("0000")) {
+                    Toast.makeText(activity, "Welcome", Toast.LENGTH_SHORT).show();
+                    question_index_java questionIndexJava = new question_index_java(activity);
+                    questionIndexJava.click();
+                    signup_layout.setVisibility(View.INVISIBLE);
+                    password_layout.setVisibility(View.INVISIBLE);
+                    answer_layout.setVisibility(View.INVISIBLE);
+                    score_layout.setVisibility(View.INVISIBLE);
+                    login_layout.setVisibility(View.INVISIBLE);
+                    question_layout.setVisibility(View.VISIBLE);
+                }
+                /**
+                 * In order to Bypass the Login this part is removed
+                 */
+            /*
+
                 if (userid.equals("") || password.equals("") || input_code.equals("")) {
                     Toast.makeText(activity, "FILL ALL", Toast.LENGTH_SHORT).show();
                 } else {
@@ -112,6 +128,7 @@ public class login_java {
                         }
                     }
                 }
+                */
             }
         });
         signup_b.setOnClickListener(new View.OnClickListener() {
