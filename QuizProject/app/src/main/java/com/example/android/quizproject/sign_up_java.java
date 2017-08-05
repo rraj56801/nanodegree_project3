@@ -110,8 +110,10 @@ public class sign_up_java {
                                                                           login_layout.setVisibility(View.VISIBLE);
                                                                       } else {
                                                                           data.execSQL("insert into userTable values('" + userid + "','" + firstname + "','" + lastname + "','" + mobile + "','" + email + "','" + password + "')");
-                                                                          SmsManager smsManager = SmsManager.getDefault();
-                                                                          smsManager.sendTextMessage(mobile, null, " " + otp + " " + "@" + userid + "", null, null);
+                                                                         /* To avoid app crash the following code is commented
+                                                                         /* SmsManager smsManager = SmsManager.getDefault();
+                                                                            smsManager.sendTextMessage(mobile, null, " " + otp + " " + "@" + userid + "", null, null);
+                                                                         */
                                                                           Toast.makeText(activity, "CODE SENT: " + mobile + "", Toast.LENGTH_SHORT).show();
                                                                           Toast.makeText(activity, "Welcome", Toast.LENGTH_SHORT).show();
                                                                           password_layout.setVisibility(View.INVISIBLE);
